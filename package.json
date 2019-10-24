@@ -1,0 +1,21 @@
+{
+  "name": "arturasportfolio",
+  "version": "1.0.0",
+  "description": "Arturas Grimalis photography portfolio",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Rafael Freitas",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-cssnano": "^2.1.3",
+    "gulp-imagemin": "^6.1.1",
+    "gulp-minify-html": "^1.0.6",
+    "gulp-sass": "^4.0.2",
+    "gulp-uglify-es": "^2.0.0",
+    "node-sass": "^4.13.0"
+  }
+}
