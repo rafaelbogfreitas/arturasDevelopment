@@ -1,0 +1,48 @@
+//Mixin for flex-box
+
+@mixin flex-box($property, $value) {
+    #{$property}:$value;
+    -moz-#{$property}:$value;
+    -webkit-#{$property}:$value;
+    -ms-#{$property}:$value;
+    -o-#{$property}:$value;
+};
+
+//Mixins for media queries
+
+@mixin break ($min-width, $max-width) {
+    @media only screen and (min-width: $min-width) and (max-width: $max-width) {
+        @content;
+    }
+};
+
+@mixin small ($value) {
+    @media only screen and (max-width: 400px) {
+        @content;
+    }
+}
+
+@mixin medium {
+    @media only screen and (max-width: 900px) {
+        @content;
+    }
+}
+
+@mixin large {
+    @media only screen and (min-width: 901px) {
+        @content;
+    }
+}
+
+//Mixin for grid
+
+@mixin grid($arr) {
+    grid-column-start: nth($arr, 1);
+    grid-column-end: nth($arr, 2);
+    grid-row-start: nth($arr, 3);
+    -ms-grid-column: nth($arr, 4);
+    -ms-grid-column-span: nth($arr, 5);
+    -ms-grid-row: nth($arr, 6);
+    -ms-grid-row-span: nth($arr, 7);
+    z-index: nth($arr, 8);
+}

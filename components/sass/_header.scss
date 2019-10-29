@@ -1,0 +1,41 @@
+.main-header {
+    width:100vw;
+    height: auto;
+    background:rgba($main-color, 0.9);
+
+    position:fixed;
+    z-index:10;
+    
+    @include flex-box (display, flex);
+    @include flex-box (flex-direction, row);
+    @include flex-box (justify-content, space-between);
+
+    .main-header-text{
+        padding-left: 30px;
+        
+        @include flex-box (display, flex);
+        @include flex-box (flex-direction, row);
+        @include flex-box (align-items, center);
+
+        transition:height 0.5s linear, font-size 0.5s linear;
+    }
+
+    i {
+        @include flex-box(align-self, center);
+        font-size: 1.8rem;
+        margin-right: 50px;
+    }
+};
+
+
+//class to be applied when scrolling the page
+
+.notScrolling {
+    font-size: $font-logo;
+    height:$header-height;
+}
+
+.scrolling {
+    font-size: $font-mobile;
+    height: $header-height / 3;
+}

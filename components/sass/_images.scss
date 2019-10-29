@@ -1,0 +1,15 @@
+#images-container {
+    max-width: 1200px;
+    padding-top: 100px;
+
+    img{
+        transition:transform 0.2s ease-in-out;
+        &:hover {
+            transform: scale(1.1);
+            z-index: 10;
+            transition: transform 0.2s ease-in-out;
+
+            cursor: pointer;
+        }
+    }
+}

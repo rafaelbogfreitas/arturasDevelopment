@@ -1,10 +1,11 @@
 const gulp = require('gulp');
 const sass = require('gulp-sass');
-const concat = require('gulp-concat');
+// const concat = require('gulp-concat');
 const html = require('gulp-minify-html');
 const css = require('gulp-cssnano');
-const image = require('gulp-imagemin');
+const img = require('gulp-imagemin');
 const uglify = require('gulp-uglify-es').default;
+const json = require('gulp-json-minify');
 
 sass.compile = require('node-sass');
 
@@ -12,12 +13,12 @@ const jsSrc = ['./components/scripts/*.js'];
 const sassSrc = ['./components/sass/*.scss'];
 
 //concat script files from 'components' folder
-function concatJs (cb) {
-    gulp.src(jsSrc)
-    .pipe(concat('script.js'))
-    .pipe(gulp.dest('./development/scripts/'));
-    cb();
-};
+// function concatJs (cb) {
+//     gulp.src(jsSrc)
+//     .pipe(concat('script.js'))
+//     .pipe(gulp.dest('./development/scripts/'));
+//     cb();
+// };
 
 //compile sass 
 function compile(cb) {
@@ -29,31 +30,48 @@ function compile(cb) {
 
 //watch for changes in the scripts or styles files
 function watch() {
-    gulp.watch(jsSrc, concatJs);
+    // gulp.watch(jsSrc, concatJs);
     gulp.watch(sassSrc, compile);
-    gulp.watch('./development/**/*.*', minify);
 }
 
-//minify all files and send to dist
-function minify(cb){
-    //html
+function js(cb){
+    gulp.src('./development/scripts/*.js')
+    .pipe(uglify())
+    .pipe(gulp.dest('./dist/scripts/'));
+    cb();
+}
+
+function minifyCss(cb){
+    gulp.src('./development/styles/*.css')
+    .pipe(css())
+    .pipe(gulp.dest('./dist/styles/'));
+    cb();
+}
+
+function minifyHtml(cb){
     gulp.src('./development/*.html')
     .pipe(html())
     .pipe(gulp.dest('./dist/'));
-    //css
-    gulp.src('./development/styles/*.css')
-    .pipe(css())
-    .pipe(gulp.dest('./dist/css/'));
-    //js
-    gulp.src('./development/scripts/*.js')
-    .pipe(uglify())
-    .pipe(gulp.dest('./dist/js/'));
+    cb();
+}
+
+function images(cb){
+    gulp.src('./development/images/*.*')
+    .pipe(img())
+    .pipe(gulp.dest('./dist/images/'))
+    cb();
+}
+
+function miniJson(cb){
+    //json
+    gulp.src('./development/*.json')
+    .pipe(json())
+    .pipe(gulp.dest('./dist/'));
     cb();
 }
 
 
 
-exports.concat = concatJs;
-exports.compile = compile;
+// exports.concat = concatJs;
 exports.watch = watch;
-exports.minify = minify;
+exports.default = gulp.series(minifyHtml, minifyCss, js, images, miniJson);

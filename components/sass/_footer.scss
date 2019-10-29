@@ -1,0 +1,13 @@
+footer {
+    width:100vw;
+    padding: 30px 0;
+
+    @include flex-box(display, flex);
+    @include flex-box(justify-content, center);
+
+    a {
+        margin-left: 10px;
+        text-decoration: none;
+        color: lighten(black, 20%);
+    }
+}

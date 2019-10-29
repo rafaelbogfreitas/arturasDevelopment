@@ -1,1 +1,16 @@
+html {
+    font-family: $family;
+    font-size: 15px;
+}
 
+body {
+    @include flex-box(display, flex);
+    @include flex-box(flex-direction, column);
+    @include flex-box(align-items, center);
+}
+
+#images-container {
+    img {
+        width: 100%;
+    }
+}
