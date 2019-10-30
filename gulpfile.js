@@ -1,24 +1,14 @@
 const gulp = require('gulp');
 const sass = require('gulp-sass');
-// const concat = require('gulp-concat');
 const html = require('gulp-minify-html');
 const css = require('gulp-cssnano');
 const img = require('gulp-imagemin');
 const uglify = require('gulp-uglify-es').default;
 const json = require('gulp-json-minify');
 
-sass.compile = require('node-sass');
+// sass.compile = require('node-sass');
 
-const jsSrc = ['./components/scripts/*.js'];
 const sassSrc = ['./components/sass/*.scss'];
-
-//concat script files from 'components' folder
-// function concatJs (cb) {
-//     gulp.src(jsSrc)
-//     .pipe(concat('script.js'))
-//     .pipe(gulp.dest('./development/scripts/'));
-//     cb();
-// };
 
 //compile sass 
 function compile(cb) {
