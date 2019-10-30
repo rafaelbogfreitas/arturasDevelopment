@@ -1,0 +1,59 @@
+.contact-form {
+    width:100vw;
+    height:100vh;
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:30;
+    background:rgba(black,0.8);
+
+    @include flex-box(display, flex);
+    @include flex-box(flex-direction, column);
+    @include flex-box(justify-content, center);
+    @include flex-box(align-items, center);
+
+    .form-section {
+        &:not(:nth-child(3)){
+            margin:50px;
+        }
+        input{
+            width: 300px;
+            margin: 0 30px;
+            background: transparent;
+            border:none;
+            border-bottom: 2px solid white;
+
+            font-size: 1.2rem;
+            color:white;
+
+            &[type="submit"]{
+                font-size: 2rem;
+                font-family: "Arial Black";
+                color:white !important;
+                border:none;
+            }
+
+            &::placeholder {
+                color:rgba(white, 0.8);
+            }
+        }
+    }
+    
+    textarea {
+        width:660px;
+        height:250px;
+        background:transparent;
+        border:2px solid white;
+        color:white;
+        
+        &::placeholder {
+            color:rgba(white, 0.8);
+        }
+    }
+
+}
+
+//hide
+.hidden{
+    display:none !important;
+}

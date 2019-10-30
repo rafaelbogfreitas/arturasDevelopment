@@ -105,7 +105,12 @@ body {
     -ms-align-self: center;
     -o-align-self: center;
     font-size: 1.8rem;
-    margin-right: 50px; }
+    margin-right: 50px;
+    transition: transform 0.2s linear; }
+    .main-header i:hover {
+      cursor: pointer;
+      transform: scale(1.1);
+      transition: transform 0.2s linear; }
 
 .notScrolling {
   font-size: 6rem;
@@ -133,7 +138,7 @@ body {
   top: 0;
   left: 0;
   background: rgba(0, 0, 0, 0.8);
-  z-index: 20;
+  z-index: 30;
   display: flex;
   -moz-display: flex;
   -webkit-display: flex;
@@ -177,8 +182,6 @@ body {
     border-radius: 100%; }
     .layer .close-btn:hover {
       cursor: pointer; }
-  .layer .large-image {
-    box-shadow: 0px 0px 4px 0px white; }
 
 .layer-closed {
   width: 0vw;
@@ -443,6 +446,63 @@ body {
   -ms-grid-row: 23;
   -ms-grid-row-span: 3;
   z-index: 2; }
+
+.contact-form {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 30;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  -moz-display: flex;
+  -webkit-display: flex;
+  -ms-display: flex;
+  -o-display: flex;
+  flex-direction: column;
+  -moz-flex-direction: column;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  -o-flex-direction: column;
+  justify-content: center;
+  -moz-justify-content: center;
+  -webkit-justify-content: center;
+  -ms-justify-content: center;
+  -o-justify-content: center;
+  align-items: center;
+  -moz-align-items: center;
+  -webkit-align-items: center;
+  -ms-align-items: center;
+  -o-align-items: center; }
+  .contact-form .form-section:not(:nth-child(3)) {
+    margin: 50px; }
+  .contact-form .form-section input {
+    width: 300px;
+    margin: 0 30px;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid white;
+    font-size: 1.2rem;
+    color: white; }
+    .contact-form .form-section input[type="submit"] {
+      font-size: 2rem;
+      font-family: "Arial Black";
+      color: white !important;
+      border: none; }
+    .contact-form .form-section input::placeholder {
+      color: rgba(255, 255, 255, 0.8); }
+  .contact-form textarea {
+    width: 660px;
+    height: 250px;
+    background: transparent;
+    border: 2px solid white;
+    color: white; }
+    .contact-form textarea::placeholder {
+      color: rgba(255, 255, 255, 0.8); }
+
+.hidden {
+  display: none !important; }
 
 footer {
   width: 100vw;

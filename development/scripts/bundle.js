@@ -14,35 +14,58 @@ const loadUser = function() {
 }
 
 module.exports = loadUser;
-},{"jquery":5,"mustache":6}],2:[function(require,module,exports){
+},{"jquery":6,"mustache":7}],2:[function(require,module,exports){
 const $ = require('jquery');
 const loadUser = require('./Mustache');
 const Header = require('./header');
 const Layer = require('./layer');
-
+const Form = require('./form');
 
 
 $(document).ready(function(){
+    //load images markup using Mustache and the data.json
     loadUser();
+
+    //hides the envelope icon when the page iniatially loads
+    $('.fas.fa-envelope').hide();
     
+    
+    //scrolling event
     $(document).on('scroll', function(){
+        //shrinks the header when page scrollY > 0
         Header.shrinkHeader();
+        //shows or hides the envelope icon depending the scrollY
         Header.toggleEnvelope();
     });
 
+    //click event listener in the images container
     $('#images-container').on('click', Layer.imageLayer);
+
+    $('.fas.fa-envelope').on('click', function(){
+        Form.toggleForm();
+    })
     
 });
 
 
 
-},{"./Mustache":1,"./header":3,"./layer":4,"jquery":5}],3:[function(require,module,exports){
+},{"./Mustache":1,"./form":3,"./header":4,"./layer":5,"jquery":6}],3:[function(require,module,exports){
+const $ = require('jquery');
+
+const Form = {
+    toggleForm(e){
+        $('.contact-form').toggleClass('hidden');
+    }
+}
+
+module.exports = Form;
+},{"jquery":6}],4:[function(require,module,exports){
 const $ = require('jquery');
 
 const Header = {
     
     toggleEnvelope () {
-        if(window.scrollY == 0) {
+        if(window.scrollY <= 50) {
             $('.fas.fa-envelope').hide();
         } else {
             $('.fas.fa-envelope').show();
@@ -60,7 +83,7 @@ const Header = {
 
 
 module.exports = Header;
-},{"jquery":5}],4:[function(require,module,exports){
+},{"jquery":6}],5:[function(require,module,exports){
 const $ = require('jquery');
 
 const Layer = {
@@ -72,6 +95,14 @@ const Layer = {
             $('.layer').html('<img class="large-image"/><div class="close-btn">X</div>');
 
             document.querySelector('.large-image').src = e.target.src;
+
+            if($('.large-image').width() > $(window).width()) {
+                let ratio = $('.large-image').width - $(window).width();
+            } else if ($('.large-image').height() == $('.large-image').height()) {
+                console.log('aia');
+            }
+
+            
     
             $('.close-btn').on('click', function(){
                 $('.layer').addClass('layer-closed').removeClass('layer');
@@ -85,7 +116,7 @@ const Layer = {
 };
 
 module.exports = Layer;
-},{"jquery":5}],5:[function(require,module,exports){
+},{"jquery":6}],6:[function(require,module,exports){
 /*!
  * jQuery JavaScript Library v3.4.1
  * https://jquery.com/
@@ -10685,7 +10716,7 @@ if ( !noGlobal ) {
 return jQuery;
 } );
 
-},{}],6:[function(require,module,exports){
+},{}],7:[function(require,module,exports){
 /*!
  * mustache.js - Logic-less {{mustache}} templates with JavaScript
  * http://github.com/janl/mustache.js

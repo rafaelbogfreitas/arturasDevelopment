@@ -3,7 +3,7 @@ const $ = require('jquery');
 const Header = {
     
     toggleEnvelope () {
-        if(window.scrollY == 0) {
+        if(window.scrollY <= 50) {
             $('.fas.fa-envelope').hide();
         } else {
             $('.fas.fa-envelope').show();
