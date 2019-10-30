@@ -16,8 +16,48 @@
     .close-btn {
         @extend .close-btn-styles
     }
+
+    .arrow {
+        font-size: 2rem;
+        background: rgba(white, 0.5);
+        transition: background 0.2s linear;
+        width:40px;
+        height:40px;
+        border-radius: 100%;
+        text-align: center;
+        
+        @include flex-box(display, flex);
+        @include flex-box(justify-content, space-around);
+        @include flex-box(align-items, center);
+        
+        &:hover{
+            cursor: pointer;
+            background: rgba(white, 1);
+        }
+        
+    }
+
+    .right-arrow {
+        @extend .arrow;
+        position:fixed;
+        right:100px;
+        i {
+            margin-left:2px;
+        }
+        
+    }
+    
+    .left-arrow {
+        @extend .arrow;
+        position:fixed;
+        left:100px;
+        i{
+            margin-right:3px;
+        }
+    }
    
 }
+
 
 .layer-closed {
     width:0vw;

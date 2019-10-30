@@ -185,6 +185,42 @@ body {
   -ms-align-items: center;
   -o-align-items: center;
   transition: width 0.5s ease-out, height 0.5s ease-out; }
+  .layer .arrow, .layer .right-arrow, .layer .left-arrow {
+    font-size: 2rem;
+    background: rgba(255, 255, 255, 0.5);
+    transition: background 0.2s linear;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    text-align: center;
+    display: flex;
+    -moz-display: flex;
+    -webkit-display: flex;
+    -ms-display: flex;
+    -o-display: flex;
+    justify-content: space-around;
+    -moz-justify-content: space-around;
+    -webkit-justify-content: space-around;
+    -ms-justify-content: space-around;
+    -o-justify-content: space-around;
+    align-items: center;
+    -moz-align-items: center;
+    -webkit-align-items: center;
+    -ms-align-items: center;
+    -o-align-items: center; }
+    .layer .arrow:hover, .layer .right-arrow:hover, .layer .left-arrow:hover {
+      cursor: pointer;
+      background: white; }
+  .layer .right-arrow {
+    position: fixed;
+    right: 100px; }
+    .layer .right-arrow i {
+      margin-left: 2px; }
+  .layer .left-arrow {
+    position: fixed;
+    left: 100px; }
+    .layer .left-arrow i {
+      margin-right: 3px; }
 
 .layer-closed {
   width: 0vw;
