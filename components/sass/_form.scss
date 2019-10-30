@@ -29,10 +29,17 @@
             &[type="submit"]{
                 font-size: 2rem;
                 font-family: "Arial Black";
-                color:white !important;
+                color:rgba(white, 0.5) !important;
                 border:none;
-            }
+                cursor: pointer;
 
+                transition:color 0.2s linear;
+                &:hover{
+                    color:rgba(white, 1) !important;
+                    transition:color 0.2s linear;
+                }
+            }
+            
             &::placeholder {
                 color:rgba(white, 0.8);
             }
@@ -47,8 +54,13 @@
         color:white;
         
         &::placeholder {
+            font-size: 1.2rem;
             color:rgba(white, 0.8);
         }
+    }
+
+    .close-btn {
+        @extend .close-btn-styles
     }
 
 }

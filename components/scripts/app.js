@@ -24,9 +24,20 @@ $(document).ready(function(){
     //click event listener in the images container
     $('#images-container').on('click', Layer.imageLayer);
 
+    //click event on envelope icon to toggle the form
     $('.fas.fa-envelope').on('click', function(){
         Form.toggleForm();
+    });
+
+    //click event on form close-btn to hide form
+    $('.contact-form .close-btn').on('click', function(){
+        Form.closeForm();
     })
+
+    //submit event to hide the form after form submission
+    $('.contact-form').on('submit', function(e){
+        Form.submit(e);
+    });
     
 });
 

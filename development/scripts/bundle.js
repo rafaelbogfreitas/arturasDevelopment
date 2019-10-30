@@ -41,9 +41,20 @@ $(document).ready(function(){
     //click event listener in the images container
     $('#images-container').on('click', Layer.imageLayer);
 
+    //click event on envelope icon to toggle the form
     $('.fas.fa-envelope').on('click', function(){
         Form.toggleForm();
+    });
+
+    //click event on form close-btn to hide form
+    $('.contact-form .close-btn').on('click', function(){
+        Form.closeForm();
     })
+
+    //submit event to hide the form after form submission
+    $('.contact-form').on('submit', function(e){
+        Form.submit(e);
+    });
     
 });
 
@@ -54,6 +65,15 @@ const $ = require('jquery');
 
 const Form = {
     toggleForm(e){
+        $('.contact-form').toggleClass('hidden');
+    },
+    
+    submit(e) {
+        // e.preventDefault();
+        $('.contact-form').toggleClass('hidden');
+    },
+    
+    closeForm(){
         $('.contact-form').toggleClass('hidden');
     }
 }
@@ -91,22 +111,24 @@ const Layer = {
     imageLayer(e) {
         console.log(e);
         if(e.target.nodeName === 'IMG'){
-            $('.layer-closed').addClass('layer').removeClass('layer-closed');
+            // $('.layer-closed').addClass('layer').removeClass('layer-closed');
+            $('.layer').toggleClass('hidden');
             $('.layer').html('<img class="large-image"/><div class="close-btn">X</div>');
-
+            
             document.querySelector('.large-image').src = e.target.src;
-
+            
             if($('.large-image').width() > $(window).width()) {
                 let ratio = $('.large-image').width - $(window).width();
             } else if ($('.large-image').height() == $('.large-image').height()) {
                 console.log('aia');
             }
-
             
-    
-            $('.close-btn').on('click', function(){
-                $('.layer').addClass('layer-closed').removeClass('layer');
-                $('.close-btn').remove();
+            
+            
+            $('.layer .close-btn').on('click', function(){
+                // $('.layer').addClass('layer-closed').removeClass('layer');
+                $('.layer').toggleClass('hidden');
+                $('.layer-closed .close-btn').remove();
                 $('.large-image').remove();
 
             });

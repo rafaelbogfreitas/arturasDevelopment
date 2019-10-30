@@ -6,8 +6,13 @@ footer {
     @include flex-box(justify-content, center);
 
     a {
-        margin-left: 10px;
+        margin-left: 5px;
         text-decoration: none;
-        color: lighten(black, 20%);
+        color: lighten(black, 50%);
+        transition:color 0.2s linear;
+        
+        &:hover {
+            color: black;
+        }
     }
 }

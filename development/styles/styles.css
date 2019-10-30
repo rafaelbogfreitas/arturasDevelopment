@@ -59,6 +59,36 @@ body {
 #images-container img {
   width: 100%; }
 
+.close-btn-styles, .layer .close-btn, .contact-form .close-btn {
+  width: 40px;
+  height: 40px;
+  position: fixed;
+  top: 100px;
+  right: 100px;
+  display: flex;
+  -moz-display: flex;
+  -webkit-display: flex;
+  -ms-display: flex;
+  -o-display: flex;
+  justify-content: center;
+  -moz-justify-content: center;
+  -webkit-justify-content: center;
+  -ms-justify-content: center;
+  -o-justify-content: center;
+  align-items: center;
+  -moz-align-items: center;
+  -webkit-align-items: center;
+  -ms-align-items: center;
+  -o-align-items: center;
+  font-size: 1.8rem;
+  font-family: sans-serif;
+  background: rgba(255, 255, 255, 0.5);
+  transition: background 0.2s linear;
+  border-radius: 100%; }
+  .close-btn-styles:hover, .layer .close-btn:hover, .contact-form .close-btn:hover {
+    cursor: pointer;
+    background: white; }
+
 .main-header {
   width: 100vw;
   height: auto;
@@ -155,33 +185,6 @@ body {
   -ms-align-items: center;
   -o-align-items: center;
   transition: width 0.5s ease-out, height 0.5s ease-out; }
-  .layer .close-btn {
-    width: 40px;
-    height: 40px;
-    position: fixed;
-    top: 100px;
-    right: 100px;
-    display: flex;
-    -moz-display: flex;
-    -webkit-display: flex;
-    -ms-display: flex;
-    -o-display: flex;
-    justify-content: center;
-    -moz-justify-content: center;
-    -webkit-justify-content: center;
-    -ms-justify-content: center;
-    -o-justify-content: center;
-    align-items: center;
-    -moz-align-items: center;
-    -webkit-align-items: center;
-    -ms-align-items: center;
-    -o-align-items: center;
-    font-size: 1.8rem;
-    font-family: sans-serif;
-    background: rgba(255, 255, 255, 0.8);
-    border-radius: 100%; }
-    .layer .close-btn:hover {
-      cursor: pointer; }
 
 .layer-closed {
   width: 0vw;
@@ -488,8 +491,13 @@ body {
     .contact-form .form-section input[type="submit"] {
       font-size: 2rem;
       font-family: "Arial Black";
-      color: white !important;
-      border: none; }
+      color: rgba(255, 255, 255, 0.5) !important;
+      border: none;
+      cursor: pointer;
+      transition: color 0.2s linear; }
+      .contact-form .form-section input[type="submit"]:hover {
+        color: white !important;
+        transition: color 0.2s linear; }
     .contact-form .form-section input::placeholder {
       color: rgba(255, 255, 255, 0.8); }
   .contact-form textarea {
@@ -499,6 +507,7 @@ body {
     border: 2px solid white;
     color: white; }
     .contact-form textarea::placeholder {
+      font-size: 1.2rem;
       color: rgba(255, 255, 255, 0.8); }
 
 .hidden {
@@ -518,6 +527,9 @@ footer {
   -ms-justify-content: center;
   -o-justify-content: center; }
   footer a {
-    margin-left: 10px;
+    margin-left: 5px;
     text-decoration: none;
-    color: #333333; }
+    color: gray;
+    transition: color 0.2s linear; }
+    footer a:hover {
+      color: black; }
