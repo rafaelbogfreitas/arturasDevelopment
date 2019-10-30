@@ -63,8 +63,8 @@ body {
   width: 40px;
   height: 40px;
   position: fixed;
-  top: 100px;
-  right: 100px;
+  top: 10px;
+  right: 10px;
   display: flex;
   -moz-display: flex;
   -webkit-display: flex;
@@ -167,7 +167,7 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(255, 255, 255, 0.9);
   z-index: 30;
   display: flex;
   -moz-display: flex;
@@ -185,9 +185,14 @@ body {
   -ms-align-items: center;
   -o-align-items: center;
   transition: width 0.5s ease-out, height 0.5s ease-out; }
+  .layer .large-image {
+    max-width: 100%;
+    max-height: 100%; }
+  .layer .close-btn:hover {
+    background: black;
+    color: white; }
   .layer .arrow, .layer .right-arrow, .layer .left-arrow {
     font-size: 2rem;
-    background: rgba(255, 255, 255, 0.5);
     transition: background 0.2s linear;
     width: 40px;
     height: 40px;
@@ -210,7 +215,9 @@ body {
     -o-align-items: center; }
     .layer .arrow:hover, .layer .right-arrow:hover, .layer .left-arrow:hover {
       cursor: pointer;
-      background: white; }
+      background: black; }
+      .layer .arrow:hover i, .layer .right-arrow:hover i, .layer .left-arrow:hover i {
+        color: white; }
   .layer .right-arrow {
     position: fixed;
     right: 100px; }
@@ -221,11 +228,6 @@ body {
     left: 100px; }
     .layer .left-arrow i {
       margin-right: 3px; }
-
-.layer-closed {
-  width: 0vw;
-  height: 0vh;
-  transition: width 0.5s ease-out, height 0.5s ease-out; }
 
 #images-container {
   display: grid;
@@ -521,7 +523,8 @@ body {
     margin: 0 30px;
     background: transparent;
     border: none;
-    border-bottom: 2px solid white;
+    border-bottom: 1px solid white;
+    padding-left: 10px;
     font-size: 1.2rem;
     color: white; }
     .contact-form .form-section input[type="submit"] {
@@ -535,16 +538,21 @@ body {
         color: white !important;
         transition: color 0.2s linear; }
     .contact-form .form-section input::placeholder {
-      color: rgba(255, 255, 255, 0.8); }
+      color: rgba(255, 255, 255, 0.3);
+      padding-left: 10px; }
   .contact-form textarea {
     width: 660px;
+    max-width: 660px;
     height: 250px;
+    padding: 10px;
+    font-size: 1.2rem;
     background: transparent;
-    border: 2px solid white;
+    border: 1px solid white;
     color: white; }
     .contact-form textarea::placeholder {
       font-size: 1.2rem;
-      color: rgba(255, 255, 255, 0.8); }
+      color: rgba(255, 255, 255, 0.3);
+      padding-left: 10px; }
 
 .hidden {
   display: none !important; }

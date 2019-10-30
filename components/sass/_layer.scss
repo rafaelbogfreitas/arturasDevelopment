@@ -4,7 +4,7 @@
     position: fixed;
     top:0;
     left:0;
-    background: rgba(black, 0.8);
+    background: rgba(white, 0.9);
     z-index: 30;
 
     @include flex-box(display, flex);
@@ -13,13 +13,21 @@
 
     transition: width 0.5s ease-out, height 0.5s ease-out;
 
+    .large-image {
+        max-width: 100%;
+        max-height: 100%;
+    }
+
     .close-btn {
-        @extend .close-btn-styles
+        @extend .close-btn-styles;
+        &:hover {
+            background: black;
+            color:white;
+        }
     }
 
     .arrow {
         font-size: 2rem;
-        background: rgba(white, 0.5);
         transition: background 0.2s linear;
         width:40px;
         height:40px;
@@ -32,7 +40,10 @@
         
         &:hover{
             cursor: pointer;
-            background: rgba(white, 1);
+            background: black;
+            i{
+                color:white;
+            }
         }
         
     }
@@ -58,11 +69,4 @@
    
 }
 
-
-.layer-closed {
-    width:0vw;
-    height:0vh;
-
-    transition: width 0.5s ease-out, height 0.5s ease-out;
-}
 

@@ -21,7 +21,8 @@
             margin: 0 30px;
             background: transparent;
             border:none;
-            border-bottom: 2px solid white;
+            border-bottom: 1px solid white;
+            padding-left: 10px;
 
             font-size: 1.2rem;
             color:white;
@@ -41,21 +42,26 @@
             }
             
             &::placeholder {
-                color:rgba(white, 0.8);
+                color:rgba(white, 0.3);
+                padding-left: 10px;
             }
         }
     }
     
     textarea {
         width:660px;
+        max-width:660px;
         height:250px;
+        padding: 10px;
+        font-size: 1.2rem;
         background:transparent;
-        border:2px solid white;
+        border:1px solid white;
         color:white;
         
         &::placeholder {
             font-size: 1.2rem;
-            color:rgba(white, 0.8);
+            color:rgba(white, 0.3);
+            padding-left:10px;
         }
     }
 

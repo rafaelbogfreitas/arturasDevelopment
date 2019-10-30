@@ -123,7 +123,6 @@ const Layer = {
             if($('.left-arrow')){
                 $('.left-arrow').on('click', function(){
                     let imgArr = document.querySelectorAll('#images-container img');
-                    console.log(imgArr);
                     for(let i = 0; i < imgArr.length; i++){
                         if(imgArr[i].src === imgSrc && i !== 0 ){
                             imgSrc = imgArr[i-1].src;
@@ -135,11 +134,12 @@ const Layer = {
                             $('.large-image').remove()
                             $('.layer').prepend('<img class="large-image animated fadeIn"/>');
                             document.querySelector('.large-image').src = imgSrc;
-                        }
+                        };
                     }
                 });
             }
             
+            //right arrow click event listener to change pics
             if($('.right-arrow')){
                 $('.right-arrow').on('click', function(){
                     let imgArr = document.querySelectorAll('#images-container img');
@@ -158,7 +158,7 @@ const Layer = {
                         }
                     }
                 });
-            }
+            };
             
             
 
