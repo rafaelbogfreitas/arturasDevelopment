@@ -143,7 +143,6 @@ const Layer = {
             if($('.right-arrow')){
                 $('.right-arrow').on('click', function(){
                     let imgArr = document.querySelectorAll('#images-container img');
-                    console.log(imgArr.length);
                     for(let i = 0; i < imgArr.length; i++){
                         if(imgArr[i].src === imgSrc && i !== imgArr.length - 1){
                             imgSrc = imgArr[i+1].src;
@@ -159,13 +158,13 @@ const Layer = {
                     }
                 });
             };
-            
-            
 
             $('.layer .close-btn').on('click', function(){
                 $('.layer').toggleClass('hidden');
                 $('.layer-closed .close-btn').remove();
                 $('.large-image').remove();
+                $('.left-arrow').off('click');
+                $('.right-arrow').off('click');
             });
         }
     }
