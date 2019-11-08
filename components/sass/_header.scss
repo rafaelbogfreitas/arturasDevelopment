@@ -39,6 +39,9 @@
 
 .notScrolling {
     font-size: $font-logo;
+    @include small {
+        font-size: $font-logo - 2;
+    }
     height:$header-height;
 }
 

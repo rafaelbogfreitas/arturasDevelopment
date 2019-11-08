@@ -145,6 +145,9 @@ body {
 .notScrolling {
   font-size: 6rem;
   height: 100px; }
+  @media only screen and (max-width: 400px) {
+    .notScrolling {
+      font-size: 4rem; } }
 
 .scrolling {
   font-size: 1.5rem;
