@@ -20,6 +20,11 @@ body {
     width: 40px;
     height:40px;
 
+    @include small {
+        width:30px;
+        height:30px;
+    }
+
     position:fixed;
     top:20px;
     right:20px;
@@ -29,6 +34,8 @@ body {
     @include flex-box(align-items, center);
 
     font-size:1.8rem;
+    @include small { font-size: 1.4rem; }
+    
     font-family: sans-serif;
     background: rgba(white, 0.5);
     transition:background 0.2s linear;

@@ -85,6 +85,13 @@ body {
   background: rgba(255, 255, 255, 0.5);
   transition: background 0.2s linear;
   border-radius: 100%; }
+  @media only screen and (max-width: 400px) {
+    .close-btn-styles, .layer .close-btn, .contact-form .close-btn {
+      width: 30px;
+      height: 30px; } }
+  @media only screen and (max-width: 400px) {
+    .close-btn-styles, .layer .close-btn, .contact-form .close-btn {
+      font-size: 1.4rem; } }
   .close-btn-styles:hover, .layer .close-btn:hover, .contact-form .close-btn:hover {
     cursor: pointer;
     background: white; }
@@ -127,7 +134,7 @@ body {
     -webkit-align-items: center;
     -ms-align-items: center;
     -o-align-items: center;
-    transition: height 0.5s linear, font-size 0.5s linear; }
+    transition: height 0.5s linear, font-size 0.3s linear; }
   .main-header i {
     align-self: center;
     -moz-align-self: center;
@@ -148,10 +155,18 @@ body {
   @media only screen and (max-width: 400px) {
     .notScrolling {
       font-size: 4rem; } }
+  .notScrolling span {
+    width: 0;
+    opacity: 0;
+    transition: width 0.2s linear 0.2s; }
 
 .scrolling {
   font-size: 1.5rem;
   height: 33.33333px; }
+  .scrolling span {
+    width: auto;
+    opacity: 0.5;
+    transition: opacity 0.2s linear 0.2s, width 0.2s linear; }
 
 #images-container {
   max-width: 1200px;
@@ -557,6 +572,9 @@ body {
     -o-justify-content: center; }
     .contact-form .form-section:not(:nth-child(3)) {
       margin: 50px; }
+      @media only screen and (max-width: 400px) {
+        .contact-form .form-section:not(:nth-child(3)) {
+          margin: 25px; } }
       @media only screen and (max-width: 900px) {
         .contact-form .form-section:not(:nth-child(3)) {
           flex-direction: column;

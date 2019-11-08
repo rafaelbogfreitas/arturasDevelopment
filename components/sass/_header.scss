@@ -17,7 +17,7 @@
         @include flex-box (flex-direction, row);
         @include flex-box (align-items, center);
 
-        transition:height 0.5s linear, font-size 0.5s linear;
+        transition:height 0.5s linear, font-size 0.3s linear;
     }
 
     i {
@@ -43,9 +43,19 @@
         font-size: $font-logo - 2;
     }
     height:$header-height;
+    span {
+        width: 0;
+        opacity:0;
+        transition:width 0.2s linear 0.2s;
+    }
 }
 
 .scrolling {
     font-size: $font-mobile;
     height: $header-height / 3;
+    span {
+        width:auto;
+        opacity:0.5;
+        transition:opacity 0.2s linear 0.2s, width 0.2s linear;
+    }
 }

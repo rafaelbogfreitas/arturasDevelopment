@@ -20,6 +20,10 @@
         &:not(:nth-child(3)){
             margin:50px;
 
+            @include small {
+                margin: 25px;
+            }
+
             @include medium {
                 @include flex-box(flex-direction, column);
             }
