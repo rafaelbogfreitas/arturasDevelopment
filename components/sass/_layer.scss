@@ -33,6 +33,13 @@
         height:40px;
         border-radius: 100%;
         text-align: center;
+
+        @include small {
+            background: black;
+            i {
+                color:white;
+            }
+        }
         
         @include flex-box(display, flex);
         @include flex-box(justify-content, space-around);
@@ -44,6 +51,12 @@
             i{
                 color:white;
             }
+            @include small {
+                background:white;
+                i{
+                    color:black;
+                }
+            }
         }
         
     }
@@ -52,6 +65,9 @@
         @extend .arrow;
         position:fixed;
         right:100px;
+        @include break(200px, 1050px){
+            right:10px;
+        }
         i {
             margin-left:2px;
         }
@@ -62,6 +78,9 @@
         @extend .arrow;
         position:fixed;
         left:100px;
+        @include break(200px, 1050px){
+            left:10px;
+        }
         i{
             margin-right:3px;
         }

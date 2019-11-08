@@ -10,7 +10,12 @@
     -ms-grid-rows: (70.588px)[55];
     
     //grid adjustments for smaller screens:
-
+    
+    @include break (401px, 900px)  {
+        grid-template-rows: repeat(55, 50px);
+        -ms-grid-rows: (50px)[55];
+    }
+    
     @include small  {
         grid-template-rows: repeat(50, 40px);
         -ms-grid-rows: (40px)[50];

@@ -216,19 +216,35 @@ body {
     -webkit-align-items: center;
     -ms-align-items: center;
     -o-align-items: center; }
+    @media only screen and (max-width: 400px) {
+      .layer .arrow, .layer .right-arrow, .layer .left-arrow {
+        background: black; }
+        .layer .arrow i, .layer .right-arrow i, .layer .left-arrow i {
+          color: white; } }
     .layer .arrow:hover, .layer .right-arrow:hover, .layer .left-arrow:hover {
       cursor: pointer;
       background: black; }
       .layer .arrow:hover i, .layer .right-arrow:hover i, .layer .left-arrow:hover i {
         color: white; }
+      @media only screen and (max-width: 400px) {
+        .layer .arrow:hover, .layer .right-arrow:hover, .layer .left-arrow:hover {
+          background: white; }
+          .layer .arrow:hover i, .layer .right-arrow:hover i, .layer .left-arrow:hover i {
+            color: black; } }
   .layer .right-arrow {
     position: fixed;
     right: 100px; }
+    @media only screen and (min-width: 200px) and (max-width: 1050px) {
+      .layer .right-arrow {
+        right: 10px; } }
     .layer .right-arrow i {
       margin-left: 2px; }
   .layer .left-arrow {
     position: fixed;
     left: 100px; }
+    @media only screen and (min-width: 200px) and (max-width: 1050px) {
+      .layer .left-arrow {
+        left: 10px; } }
     .layer .left-arrow i {
       margin-right: 3px; }
 
@@ -240,6 +256,10 @@ body {
   display: -ms-grid;
   -ms-grid-columns: 1fr [17];
   -ms-grid-rows: 70.588px [55]; }
+  @media only screen and (min-width: 401px) and (max-width: 900px) {
+    #images-container {
+      grid-template-rows: repeat(55, 50px);
+      -ms-grid-rows: 50px [55]; } }
   @media only screen and (max-width: 400px) {
     #images-container {
       grid-template-rows: repeat(50, 40px);
