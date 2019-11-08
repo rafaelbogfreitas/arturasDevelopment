@@ -9,6 +9,8 @@
     -ms-grid-columns: (1fr)[17];
     -ms-grid-rows: (70.588px)[55];
     
+    //grid adjustments for smaller screens:
+
     @include small  {
         grid-template-rows: repeat(50, 40px);
         -ms-grid-rows: (40px)[50];
@@ -16,8 +18,16 @@
 }
 
 
+//grid coordinates list pattern of info per pic:
 
-
+// ( grid-column-start,
+//   grid-column-end,
+//   grid-row-start,
+//   -ms-column,
+//   -ms-column-span,
+//   -ms-row,
+//   -ms-row-span,
+//   z-index )
 
 
 
@@ -49,6 +59,7 @@ $gridCoordinates: (
     (2, 12, 23, 2, 10, 23, 3, 2)    //pic25
 );
 
+//loop for applying grid coordinates to every pic using a mixin:
 
 @each $coordinate in $gridCoordinates {
     #image#{index($gridCoordinates, $coordinate)} {
