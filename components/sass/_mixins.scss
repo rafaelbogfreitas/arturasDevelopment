@@ -16,7 +16,7 @@
     }
 };
 
-@mixin small ($value) {
+@mixin small {
     @media only screen and (max-width: 400px) {
         @content;
     }

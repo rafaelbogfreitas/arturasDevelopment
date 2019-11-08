@@ -237,6 +237,10 @@ body {
   display: -ms-grid;
   -ms-grid-columns: 1fr [17];
   -ms-grid-rows: 70.588px [55]; }
+  @media only screen and (max-width: 400px) {
+    #images-container {
+      grid-template-rows: repeat(50, 40px);
+      -ms-grid-rows: 40px [50]; } }
 
 #image1 {
   grid-column-start: 2;
@@ -585,6 +589,7 @@ body {
 footer {
   width: 100vw;
   padding: 30px 0;
+  font-size: 1rem;
   display: flex;
   -moz-display: flex;
   -webkit-display: flex;
@@ -602,3 +607,6 @@ footer {
     transition: color 0.2s linear; }
     footer a:hover {
       color: black; }
+  @media only screen and (max-width: 400px) {
+    footer {
+      font-size: 0.8rem; } }

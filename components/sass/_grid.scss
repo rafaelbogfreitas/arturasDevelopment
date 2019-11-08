@@ -8,6 +8,11 @@
     display: -ms-grid;
     -ms-grid-columns: (1fr)[17];
     -ms-grid-rows: (70.588px)[55];
+    
+    @include small  {
+        grid-template-rows: repeat(50, 40px);
+        -ms-grid-rows: (40px)[50];
+    }
 }
 
 
