@@ -1,5 +1,5 @@
-# Artura Grimalis Photography portfolio
----
+# **Artura Grimalis** Photography portfolio
+
 ## Info:
 
 - ### About this project:
@@ -30,7 +30,7 @@
 
       npm run watchify
 
- to start watching the script files in ./components/scripts and automatically get browserify to compile all the files into one bundle.js.
+  To start watching the script files in ./components/scripts and automatically get browserify to compile all the files into one bundle.js.
 
 - ### Compiling .SCSS files:
 
@@ -57,4 +57,32 @@
   All the output will be piped to the relevant folders inside ./dist.
 
 ---
- 
+
+### How was the project built:
+
+- ### Markup:
+
+  The bulk of the markup was built using **Mustache** for templating. A div element with an id of **image-container** was filled with **img** tags generated with this template:
+
+      {{#images}}
+      <img src={{src}} id={{id}} alt="{{alt}}"/>
+      {{/images}}
+
+  Using a JSON file containing all the relevant info to build it. Like the following:
+
+      {
+        "images" : [
+          {
+              "id":"image1",
+              "src":"images/1.jpg",
+              "alt":"curved building facede, contrasting with horizon"
+          }
+      }
+
+  resulting in this:
+
+      <img src="images/1.jpg" id="image1" alt="curved building facede, contrasting with horizon"/>
+
+  like this any new data added to the data.json file will dinamically build the HTML.
+
+  ---
