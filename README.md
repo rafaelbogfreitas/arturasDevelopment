@@ -6,9 +6,9 @@
 
 - ### About this project:
 
-  The concept behind this project was to build a minimalistic website, with no info about the artist apart from his initials. The client wanted his photos to be displayed in an unstructured way and whenever one of them was clicked, to display a carousel of all the pictures on the page.
+>  The concept behind this project was to build a minimalistic website, with no info about the artist apart from his initials. The client wanted his photos to be displayed in an unstructured way and whenever one of them was clicked, to display a carousel of all the pictures on the page.
 
-  A contact form was added to help people get in touch if interested in the work.
+>  A contact form was added to help people get in touch if interested in the work.
 
 - ### Technologies:
 
@@ -46,9 +46,9 @@
 - ### Minifying all files and images:
 
   Once again in the root of the projects folder, run this command on the terminal:
-```
+  ```
   gulp
-```
+  ```
   the default gulp function will run the following:
 
     - gulp-minify-HTML
@@ -67,15 +67,15 @@
 
   The bulk of the markup was built using **Mustache** for templating. A div element with an id of **image-container** was filled with **img** tags generated with this template:
 
-```mustache
+  ```mustache
   {{#images}}
   <img src={{src}} id={{id}} alt="{{alt}}"/>
   {{/images}}
-```
+  ```
 
   Using a JSON file containing all the relevant info to build it. Like the following:
 
-```json
+  ```json
   {
     "images" : [
       {
@@ -85,13 +85,13 @@
       }
     ]
   }
-```
+  ```
 
   resulting in this:
 
-```html
+  ```html
   <img src="images/1.jpg" id="image1" alt="curved building facede, contrasting with horizon"/>
-```
+  ```
 
   like this any new data added to the data.json file will dinamically build the HTML.
 
