@@ -93,6 +93,29 @@
   <img src="images/1.jpg" id="image1" alt="curved building facede, contrasting with horizon"/>
   ```
 
-  like this any new data added to the data.json file will dinamically build the HTML.
+  like this any new data added to the data.json file will dynamically build the HTML.
 
-  ---
+- ### Grid:
+
+  The initial pictures grid was built for screens with max-width of 1400px and any bigger widths won't stretch the grid further and avoid deforming the pics. The table bellow shows the different forms of the grid depending on screen width:
+
+  | screen width | grid-column | grid-row  |
+  |--------------|-------------|-----------|
+  |:> 900px:     | :1fr:       | :70.88px: |  |:< 900px && > 400px:|:1fr:  | :50px:    |
+  |:< 400px      | :1fr:       | :40px:    |
+
+  To position the photos on the grid, the following SASS mixin was used
+
+  ```sass
+    @mixin grid($arr) {
+        grid-column-start: nth($arr, 1);
+        grid-column-end: nth($arr, 2);
+        grid-row-start: nth($arr, 3);
+        -ms-grid-column: nth($arr, 4);
+        -ms-grid-column-span: nth($arr, 5);
+        -ms-grid-row: nth($arr, 6);
+        -ms-grid-row-span: nth($arr, 7);
+        z-index: nth($arr, 8);
+    }
+  ```
+  it takes a list of grid coordinates and distributes them through the according properties.
