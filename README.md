@@ -100,10 +100,10 @@
   The initial pictures grid was built for screens with max-width of 1400px and any bigger widths won't stretch the grid further and avoid deforming the pics. The table bellow shows the different forms of the grid depending on screen width:
 
   | screen width | grid-column | grid-row   |
-  |--------------|-------------|------------|
-  |: > 900px :     | : 1fr :   | : 70.88px :|  
-  |: < 900px and > 400px :|: 1fr : | : 50px : |
-  |: < 400px :      | : 1fr :       | : 40px :   |
+  |:------------:|:------------|:-----------|
+  |> 900px       | 1fr         | 70.88px    |  
+  |< 900px and > 400px|1fr     | 50px       |
+  |< 400px       | 1fr         | 40px       |
 
   To position the photos on the grid, the following SASS mixin was used
 
