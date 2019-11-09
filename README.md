@@ -1,5 +1,7 @@
 # **Artura Grimalis** Photography portfolio
 
+![Arturas Website](https://raw.githubusercontent.com/rafaelbogfreitas/react-myportfolio/master/src/images/arturasgrimalis.png)
+
 ## Info:
 
 - ### About this project:
@@ -27,25 +29,26 @@
 
 - ### Browserify:
   Open the terminal and run this command:
-
-      npm run watchify
-
+  ```
+  npm run watchify
+  ```
   To start watching the script files in ./components/scripts and automatically get browserify to compile all the files into one bundle.js.
 
 - ### Compiling .SCSS files:
 
   In the command line, navigate to the project folder and run:
-
-      gulp watch
+  ```
+  gulp watch
+  ```
 
   The watch function will keep track of ./components/sass folder and any changes on the .scss files will be automatically compiled into .css and piped to ./development/styles/ folder.
 
 - ### Minifying all files and images:
 
   Once again in the root of the projects folder, run this command on the terminal:
-
-      gulp
-
+```
+  gulp
+```
   the default gulp function will run the following:
 
     - gulp-minify-HTML
@@ -64,24 +67,31 @@
 
   The bulk of the markup was built using **Mustache** for templating. A div element with an id of **image-container** was filled with **img** tags generated with this template:
 
-      {{#images}}
-      <img src={{src}} id={{id}} alt="{{alt}}"/>
-      {{/images}}
+```mustache
+  {{#images}}
+  <img src={{src}} id={{id}} alt="{{alt}}"/>
+  {{/images}}
+```
 
   Using a JSON file containing all the relevant info to build it. Like the following:
 
+```json
+  {
+    "images" : [
       {
-        "images" : [
-          {
-              "id":"image1",
-              "src":"images/1.jpg",
-              "alt":"curved building facede, contrasting with horizon"
-          }
+          "id":"image1",
+          "src":"images/1.jpg",
+          "alt":"curved building facede contrasting with horizon"
       }
+    ]
+  }
+```
 
   resulting in this:
 
-      <img src="images/1.jpg" id="image1" alt="curved building facede, contrasting with horizon"/>
+```html
+  <img src="images/1.jpg" id="image1" alt="curved building facede, contrasting with horizon"/>
+```
 
   like this any new data added to the data.json file will dinamically build the HTML.
 
