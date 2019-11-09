@@ -119,4 +119,61 @@
         z-index: nth($arr, 8);
     }
   ```
-  it takes a list of grid coordinates and distributes them through the according properties.
+  it takes a list of grid coordinates and distributes them through the according properties. A list of coordinates lists was used with a SASS **@each** loop to create the css for every single image:
+
+  ```sass
+    $gridCoordinates: (
+        (2, 12, 1, 2, 10, 1, 2, 2),     //pic1
+        (13, 17, 21, 13, 5, 21, 6, 1),  //pic2
+        (11, 17, 2, 11, 6, 2, 3, 2)     //pic3
+      );
+
+    @each $coordinate in $gridCoordinates {
+        #image#{index($gridCoordinates, $coordinate)} {
+            @include grid($coordinate)    
+        }
+    }
+  ```
+  Using the index of every list, it was possible to name the ID's and target the right ones for every list.
+  The result of this process was the bellow css rules to position the pictures on the grid:
+
+  ```css
+  #image1 {
+    grid-column-start: 2;
+    grid-column-end: 12;
+    grid-row-start: 1;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 10;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 2;
+    z-index: 2; }
+
+  #image2 {
+    grid-column-start: 13;
+    grid-column-end: 17;
+    grid-row-start: 21;
+    -ms-grid-column: 13;
+    -ms-grid-column-span: 5;
+    -ms-grid-row: 21;
+    -ms-grid-row-span: 6;
+    z-index: 1; }
+  ```
+  Whenever a new pic is added to **data.json** and the markup updated with Mustache, the **$gridCoordinates** list can be updated with the relevant info and generated the css rule to position it.
+- ### Scripts:
+  All the scripts in this project were created as modules and made into a single file using **Browserify**. There are four main features that were separated into four different modules and exported to main file called **app.js** and then compiled into **bundle.js** and sent to **./development/scripts**. The features are:
+    - Header animation
+    - Form event listener
+    - Pictures click event listener and carousel
+    - Compiling Mustache template
+
+  Organized like this the script files were easy to maintaing and work with. If more features are added in the future, new modules can be created.
+
+---
+
+### Future:
+
+  For now this is the finished version of this project but potentially, with more photos added in the future, it might grow further and some ideas were already discussed to created different work collection and use a different grid pattern for each of them.
+
+---
+
+>&copy;[Rafael Freitas](https://www.rafaelfreitas.co.uk) 2019
