@@ -1,4 +1,5 @@
-# **Artura Grimalis** Photography portfolio
+># **Arturas Grimalis** 
+>Photography portfolio
 
 ![Arturas Website](https://raw.githubusercontent.com/rafaelbogfreitas/react-myportfolio/master/src/images/arturasgrimalis.png)
 
@@ -7,7 +8,6 @@
 - ### About this project:
 
 >  The concept behind this project was to build a minimalistic website, with no info about the artist apart from his initials. The client wanted his photos to be displayed in an unstructured way and whenever one of them was clicked, to display a carousel of all the pictures on the page.
-
 >  A contact form was added to help people get in touch if interested in the work.
 
 - ### Technologies:
@@ -21,7 +21,7 @@
   - Common.js
 
 - ### Address
- The website is hosted on [Netlify](https://www.netlify.com) on this address: <https://www.arturasgrimalis.com>
+  The website is hosted on [Netlify](https://www.netlify.com) on this address: <https://www.arturasgrimalis.com>
 
 ---
 
@@ -65,7 +65,7 @@
 
 - ### Markup:
 
-  The bulk of the markup was built using **Mustache** for templating. A div element with an id of **image-container** was filled with **img** tags generated with this template:
+  The bulk of the markup was built using **Mustache** for templating. A div element with an id of **#image-container** was filled with **img** tags generated with this template:
 
   ```mustache
   {{#images}}
@@ -101,9 +101,9 @@
 
   | screen width | grid-column | grid-row   |
   |:------------:|:------------|:-----------|
-  |> 900px       | 1fr         | 70.88px    |  
-  |< 900px and > 400px|1fr     | 50px       |
-  |< 400px       | 1fr         | 40px       |
+  |**> 900px**       | 1fr         | 70.88px    |  
+  |**< 900px and > 400px**|1fr     | 50px       |
+  |**< 400px**       | 1fr         | 40px       |
 
   To position the photos on the grid, the following SASS mixin was used
 
@@ -172,8 +172,8 @@
 
 ### Future:
 
-  For now this is the finished version of this project but potentially, with more photos added in the future, it might grow further and some ideas were already discussed to created different work collection and use a different grid pattern for each of them.
+  >For now this is the finished version of this project but potentially, with more photos added in the future, it might grow further and some ideas were already discussed to created different work collection and use a different grid pattern for each of them.
 
 ---
 
->&copy;[Rafael Freitas](https://www.rafaelfreitas.co.uk) 2019
+&copy; [Rafael Freitas](https://www.rafaelfreitas.co.uk) 2019
