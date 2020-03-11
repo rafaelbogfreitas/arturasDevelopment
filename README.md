@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/87143386-14ab-406d-995c-0d57e723b7ad/deploy-status)](https://app.netlify.com/sites/arturasgrimalis/deploys)
+
 ># **Arturas Grimalis** 
 >Photography portfolio
 
