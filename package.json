@@ -6,7 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "Browserify components/scripts/app.js -o development/scripts/bundle.js",
-    "watch": "Watchify components/scripts/app.js -o development/scripts/bundle.js"
+    "watch": "Watchify components/scripts/app.js -o development/scripts/bundle.js",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "author": "Rafael Freitas",
   "license": "ISC",
@@ -26,6 +28,8 @@
     "gulp-json-minify": "^1.2.2",
     "node-sass": "^4.13.1",
     "uniq": "^1.0.1",
-    "watchify": "^3.11.1"
-  }
+    "watchify": "^3.11.1",
+    "snyk": "^1.319.2"
+  },
+  "snyk": true
 }
