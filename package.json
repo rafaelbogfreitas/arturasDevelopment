@@ -28,7 +28,7 @@
     "gulp-json-minify": "^1.2.2",
     "node-sass": "^4.13.1",
     "uniq": "^1.0.1",
-    "watchify": "^3.11.1",
+    "watchify": "^4.0.0",
     "snyk": "^1.319.2"
   },
   "snyk": true
